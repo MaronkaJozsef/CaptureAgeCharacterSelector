@@ -1,0 +1,13 @@
+.character-preview {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.character-container {
+  width: 400px;
+  height: 800px;
+  
+  background-color: lightblue;
+}

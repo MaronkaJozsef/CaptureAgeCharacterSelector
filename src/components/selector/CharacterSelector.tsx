@@ -8,7 +8,7 @@ export const CharacterSelector: FC = () => {
   return (
     <div className="character-selector">
       <div className="panel">
-        <h2 className='title roboto-bold'>Character Selector</h2>
+        <h2 className='title roboto-bold'>Heroes</h2>
         <div className="characters">
           {characters.map((character, index) => (
             <div 

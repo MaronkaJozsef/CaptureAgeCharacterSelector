@@ -20,7 +20,7 @@ import portrait9 from "../assets//portraits/p9.jpg";
 
 export type Race = "Elf" | "Human" | "Dwarf" | "Halfling" | "Gnome";
 export type Class = "Bard" | "Cleric" | "Druid" | "Fighter" | "Ranger" | "Thief" | "Wizard";
-export type StatName = "Strength" | "Intelligence" | "Wisdom" | "Dexterity" | "Constitution" | "Charisma" | "Health" | "Gold";
+export type StatName = "Strength" | "Intelligence" | "Wisdom" | "Dexterity" | "Constitution" | "Charisma" | "HitPoints" | "Gold";
 
 export interface Stat {
   name: string;

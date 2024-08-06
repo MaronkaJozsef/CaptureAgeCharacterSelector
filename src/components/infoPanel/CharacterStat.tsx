@@ -1,6 +1,7 @@
 import { FC } from "react";
 
 export interface CharacterStatProps {
+  icon: string;
   name?: string;
   value: string;
   modifier?: number;
@@ -14,9 +15,9 @@ const getModifierText = (modifier?: number) => {
   return ` (${prefix}${modifier})`;
 }
 
-export const CharacterStat: FC<CharacterStatProps> = ({name, value, modifier, primary}) => (
+export const CharacterStat: FC<CharacterStatProps> = ({name, value, modifier, primary, icon}) => (
   <div className={`character-stat ${primary ? "primary" : ""}`}>
-    <div className="stat-icon"></div>
+    <img className="stat-icon" src={icon} alt={name} />
     {name && <div className="stat-name">{name + getModifierText(modifier)}: </div>}
     <div className="stat-value">{value}</div>
   </div>

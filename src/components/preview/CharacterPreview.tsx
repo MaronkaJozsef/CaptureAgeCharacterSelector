@@ -7,9 +7,11 @@ export const CharacterPreview: React.FC = () => {
 
   return (
     <div className="character-preview">
-      <div className="character-container">
-        <img src={selectedCharacter.preview} alt='Full length portrait of the selected character'/>
-      </div>
+      <img
+        src={selectedCharacter.preview}
+        className="character-container"
+        alt='Full length portrait of the selected character'
+      />
     </div>
   );
 }

@@ -7,23 +7,21 @@ export const CharacterSelector: FC = () => {
 
   return (
     <div className="character-selector">
-      <div className="panel">
-        <h2 className='title roboto-bold'>Heroes</h2>
-        <div className="characters">
-          {characters.map((character, index) => (
-            <div 
-              className='character'
-              key={character.name}
-              onClick={() => selectCharacter(index)}
-            >
-              <img 
-                className='portrait'
-                src={character.portrait} 
-                alt='Character portrait'/>
-              <h3>{character.name}</h3>
-            </div>
-          ))}
-        </div>
+      <h2 className='title roboto-bold'>Heroes</h2>
+      <div className="characters">
+        {characters.map((character, index) => (
+          <div
+            className='character'
+            key={character.name}
+            onClick={() => selectCharacter(index)}
+          >
+            <img
+              className='portrait'
+              src={character.portrait}
+              alt='Character portrait' />
+            <h3>{character.name}</h3>
+          </div>
+        ))}
       </div>
     </div>
   );

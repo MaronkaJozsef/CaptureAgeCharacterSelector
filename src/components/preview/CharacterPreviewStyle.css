@@ -6,6 +6,8 @@
 }
 
 .character-container {
-  width: 400px;
-  height: 800px;
+  width: var(--panel-width);
+  border: 0.5rem solid #e7c9a1;
+  border-radius: 0.5rem;
+  filter: drop-shadow(0.85rem 0.6rem 0.6rem black);
 }

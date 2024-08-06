@@ -8,7 +8,7 @@ This project is a frontend prototype built using Vite, React, and TypeScript.
 - npm (>=6.0.0)
 
 ## Setup and Installation
-- git clone https://github.com/your-username/captureage-character-selection.git
+- git clone https://github.com/MaronkaJozsef/CaptureAgeCharacterSelector.git
 - cd CaptureAgeCharacterSelector
 - npm install
 - npm run build

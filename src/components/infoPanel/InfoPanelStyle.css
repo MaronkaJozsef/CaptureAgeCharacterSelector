@@ -51,3 +51,29 @@
 .stat-value {
   padding: 1rem;
 }
+
+.primary {
+  color: gold;
+  border: 1px none gold;
+}
+
+.primary .stat-name {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.primary .stat-value {
+  border: 1px solid;
+  border-left: none;
+  border-radius: 0 1rem 1rem 0;
+}
+
+.play-button {
+  width: 400px;
+  margin-top: 2rem;
+  color: gold;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  border: solid 2px;
+  font-size: var(--heading-text-size);
+}

@@ -1,25 +1,29 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
 import './InfoPanelStyle.css';
 import { CharacterStat } from "./CharacterStat";
+import { CharacterContext } from "../../data/CharacterContext";
 
 export const InfoPanel: FC = () => {
+  const { selectedCharacter: character } = useContext(CharacterContext)!;
+
   return (
     <div className="info-panel">
-      <h2 className="character-name roboto-bold">Character Name</h2>
+      <h2 className="character-name roboto-bold">{character.name}</h2>
       <div className="character-archetype">
-        <CharacterStat value="Elf"/>
-        <CharacterStat value="Wizard"/>
+        <CharacterStat value={character.race} />
+        <CharacterStat value={character.characterClass} />
       </div>
       <div className="character-stats">
-        <CharacterStat name="Strength" value="10"/>
-        <CharacterStat name="Intelligence" value="10" modifier={2}/>
-        <CharacterStat name="Wisdom" value="10"/>
-        <CharacterStat name="Dexterity" value="10" modifier={-1}/>
-        <CharacterStat name="Constitution" value="10"/>
-        <CharacterStat name="Charisma" value="10"/>
-        <CharacterStat name="Health" value="10"/>
-        <CharacterStat name="Gold" value="10"/>
+        {character.stats.map(stat => (
+          <CharacterStat
+            key={stat.name}
+            name={stat.name}
+            value={stat.value.toString()}
+            modifier={stat.modifier}
+            primary={stat.primary}
+          />))}
       </div>
+      <button className='play-button roboto-bold'>PLAY</button>
     </div>
   );
 };

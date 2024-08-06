@@ -3,15 +3,23 @@
   display: flex;
   flex-direction: column;
   justify-content: start;
-  background: darkred;
+  background: url("/stone_blue.jpg");
+  background-size: contain;
+  border: 0.5rem solid;
+  border-image: url("/stone_green.jpg") 20;
+  filter: drop-shadow(0.85rem 0.6rem 0.6rem black);
+  box-shadow: 0 0 1rem 0.1rem black inset;
 }
 
 .title {
   padding: 1rem;
-  background: black;
-  color: white;
   text-align: center;
   font-size: var(--heading-text-size);
+  text-shadow: 0.2rem 0.2rem 0.3rem black;
+  background-image: url(/stone.jpg);
+  background-size: cover;
+  box-shadow: 0 0 1rem 0.1rem black inset;
+  border-bottom: 0.5rem #5f4217 solid;
 }
 
 .characters {
@@ -28,6 +36,30 @@
   display: flex;
   flex-direction: column;
   background: white;
+  border: 0.3rem solid;
+  border-image: url("/stone.jpg") 30;
+  box-shadow: 0.5rem 0.4rem 0.3rem black;
+  transition: all 0.1s ease-in;
+  filter: brightness(1);
+  cursor: pointer;
+  position: relative;
+}
+
+.character:hover {
+  filter: brightness(1.2);
+}
+
+.character.selected::after {
+  content: "";
+  position: absolute;
+  top: -0.3rem;
+  left: -0.3rem;
+  width: 100%;
+  height: 100%;
+  transition: none;
+  border: 0.3rem solid;
+  filter: brightness(1.5);
+  border-image: url("/stone_gold.jpg") 30;
 }
 
 .character h3 {
@@ -40,3 +72,7 @@
 .portrait {
   width: 100%;
 }
+
+.character .name {
+  font-size: var(--normal-text-size);
+} 

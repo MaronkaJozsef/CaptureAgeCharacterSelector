@@ -21,4 +21,4 @@ export const CharacterStat: FC<CharacterStatProps> = ({name, value, modifier, pr
     {name && <div className="stat-name">{name + getModifierText(modifier)}: </div>}
     <div className="stat-value">{value}</div>
   </div>
-)
+);

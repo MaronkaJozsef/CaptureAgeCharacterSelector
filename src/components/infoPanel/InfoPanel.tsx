@@ -1,5 +1,6 @@
-import { FC, useContext } from "react";
+import { FC, useContext, useRef } from "react";
 import './InfoPanelStyle.css';
+import click from '../../assets/click.mp3';
 import { CharacterStat } from "./CharacterStat";
 import { CharacterContext } from "../../data/CharacterContext";
 
@@ -64,13 +65,18 @@ const getStatIcon = (stat: StatName) => {
 
 export const InfoPanel: FC = () => {
   const { selectedCharacter: character } = useContext(CharacterContext)!;
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  const clickHandler = () => {
+    audioRef.current?.play();
+  }
 
   return (
     <div className="info-panel">
       <h2 className="character-name roboto-bold">{character.name}</h2>
       <div className="character-archetype">
-        <CharacterStat value={character.race} icon={getRaceIcon(character.race)}/>
-        <CharacterStat value={character.characterClass} icon={getClassIcon(character.characterClass)}/>
+        <CharacterStat value={character.race} icon={getRaceIcon(character.race)} />
+        <CharacterStat value={character.characterClass} icon={getClassIcon(character.characterClass)} />
       </div>
       <div className="character-stats">
         {character.stats.map(stat => (
@@ -83,7 +89,15 @@ export const InfoPanel: FC = () => {
             icon={getStatIcon(stat.name as StatName)}
           />))}
       </div>
-      <button className='play-button roboto-bold'>PLAY</button>
+      <audio ref={audioRef}>
+        <source src={click} type="audio/mp3" />
+      </audio>
+      <button
+        className='play-button roboto-bold'
+        onClick={clickHandler}
+      >
+        PLAY
+      </button>
     </div>
   );
 };

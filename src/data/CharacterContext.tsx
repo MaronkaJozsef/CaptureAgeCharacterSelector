@@ -11,7 +11,7 @@ export const CharacterContext = createContext<CharacterContextData | null>(null)
 
 export const CharacterProvider: FC<PropsWithChildren> = ({children}) => {
   const [characters, setCharacters] = useState(characterData);
-  const [selectedCharacter, setSelectedCharacter] = useState(characterData[0]);
+  const [selectedCharacter, setSelectedCharacter] = useState(characterData[2]);
 
   const defaultValues: CharacterContextData = {
     characters,
